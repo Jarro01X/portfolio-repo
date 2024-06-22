@@ -16,7 +16,9 @@ for a specific TCG called Chaotic that has a very niche community, at the moment
 
 Here is some of the things I am working on at the moment:
 
-● Learning Go, Ansible, Terraform, and becoming better at Kubernetes
+● Learning Go, Ansible, Terraform, and becoming better at  managing Kubernetes
+
+● Contributing to Open Source Projects
 
 ● Getting some CyberSecurity certificates such as Sec+, PNPT, and AWS Security
 
@@ -26,7 +28,8 @@ Here is some of the things I am working on at the moment:
 
 ## Work Experience
 
-### Amazon - Software Engineer Intern (Seattle, WA May 2023 - August 2023)
+### Amazon - Software Engineer Intern
+### (Seattle, WA May 2023 - August 2023)
 ● Developed several design documents focusing on high & low level implementation details; managed each implementation
 throughout its entire lifecycle including planning, development & testing
 
@@ -45,10 +48,34 @@ infrastructure
 ## Projects - Cybersecurity
 
 ### Kalao
+● Developing an open source enumeration tool that ingests network traffic from nmap & tcpdump,  parses the data  into CSV files
+and which are later sourced  for locally running LLMs. Also uses both NIST CVE API and exploit-dbs API for CVE and exploitation
+checks.
+
+● Users can interact with a chatbot and ask about the overall results, possible targets, open ports, version & exploits
+
+● Tech Stack: Python, oLLaMa, LangChain, nmap, tcpdump, TCP/IP, Bash
 
 ### Bug Bounty
+● Testing websites with appropriate policies for XSS, IDORs, Information Disclosures, and many other security issues via BurpSuite.
+
+● I am part of huntr's community, the first AI/ML bug bounty platform, I test ML libraries, chatbots, and frameworks for security issues via a combination of tools such as BurpSuite and MLflow.
 
 ### CTFs
+During my time at USC I participated in two CTF activities, one time as the Red Team Captain and another one as both Blue and Red Team.
+
+● Red Team Captain: During my first CTF each group was split between a blue and red team. Blue team was responsible for creating a rudimentary bank website in which people can create
+an account and send money to others, while Red Team was responsible for hacking the banks of other teams. During my time as captain of the Red Team, I taught several group mates what SQL injections are
+and how to write payloads in their injections. I was responsible for network recon and identifying vulnerabilities, and at the very start of the activity I had noticed that the ssh port was opened.
+Once I connected to the port I ran a couple of customized scripts to run nmap and tcpdump, and through those results I realized that there was no encryption in transit, so all account creation (username and passwords) were
+in plain text in their requests. To exploit this vulnerability I wrote a several Bash and Python scripts that worked together to keep reading the HTTP requests of users, convert pcap results to CSV files, and then use
+those CSV files to access the accounts created and send the money to my account to increase my teams points.
+
+● Red and Blue Team: During my second CTF activity we were responsible for creating hashing protocols to secure password information which would then be shared with other groups, so they could try and
+crack the encryption to gain points. I helped my team create and apply the hashing protocol to all of our passwords, and then once we received the encrypted passwords of other teams I lead the development of
+scripts for tools such as JohnTheRipper and for Dictionary Attacks.
+
+### Pentesting Simulation
 
 ## Projects - Software Engineering
 
