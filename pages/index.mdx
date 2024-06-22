@@ -6,7 +6,7 @@ date: 2021-03-19
 
 # Reynaldo Jarro
 
-Hey, I'm a Computer Science/Business Administration 2024 graduate from the University of Southern California. I am very passionate about both Software Engineering and Cybersecurity. I am working towards some certifications such as Sec+, AWS Security, and TCM Security's PNPT.
+Hey, I'm a Computer Science/Business Administration 2024 graduate from the University of Southern California. I am very passionate about Software Engineering, Cybersecurity, and DevOps/SRE. I am working towards some certifications such as Sec+, AWS Security, and TCM Security's PNPT.
 
 I have used a variety of programming languages, frameworks, software, and tools throughout the years to complete projects. Currently, I am working on two projects: Kalao, a LLM Chatbot that uses RAG
 based on results from nmap scans and API calls from NIST and exploitdb to identify exploitable ports or systems in the network, and also working on a website to track card collection progress
@@ -43,7 +43,7 @@ inconsistencies. Additionally, the service will send a copy of the report via SN
 ● The Data Consistency job will be used for the next year to migrate most of the data in PubTech to newer more definitive
 infrastructure
 
-● Tech Stack: (AWS S3, CDK, EventBridge, DynamoDB, ECS, SQS, IAM, Lambda, Java, Dagger, JUnit, Kafka)
+● Tech Stack: AWS (S3, CDK, CloudFormation, EventBridge, DynamoDB, ECS, SQS, IAM, and Lambda), Java, Dagger, JUnit, Kafka
 
 ## Projects - Cybersecurity
 
@@ -61,6 +61,8 @@ checks.
 
 ● I am part of huntr's community, the first AI/ML bug bounty platform, I test ML libraries, chatbots, and frameworks for security issues via a combination of tools such as BurpSuite and MLflow.
 
+● Tech Stack/Tools and Skills:
+
 ### CTFs
 During my time at USC I participated in two CTF activities, one time as the Red Team Captain and another one as both Blue and Red Team.
 
@@ -75,15 +77,32 @@ those CSV files to access the accounts created and send the money to my account 
 crack the encryption to gain points. I helped my team create and apply the hashing protocol to all of our passwords, and then once we received the encrypted passwords of other teams I lead the development of
 scripts for tools such as JohnTheRipper and for Dictionary Attacks.
 
+● Tech Stack/Tools and Skills: nmap, tcpdump, Wireshark, Bash, Python, OpenSSH, SQL Injections, Kali Linux, JohnTheRipper
+
 ### Pentesting Simulation
 
-## Projects - Software Engineering
+## Projects - Software Engineering/DevOps
 
 ### Card Collection Tracker
 
 ### Automated CRUD AWS
+● Developed with a group a website for researchers that automates the creation of customizable CRUDs
+
+● Designed the AWS Structure that automates and takes in the CRUD Design from users. Used DynamoDB and Lambda to take in
+Data, which was then transferred to S3 due to better storage for large amounts of data. The CRUD would be instantiated by
+Serverless
+
+● Tech Stack: AWS (Lambda, S3, DynamoDB, and IAM), Node.js, Serverless, Java
 
 ### The Movie Database-esque Website
+● Led the development of a movie database website (similar to TMDB) leveraging an API that included endpoints related to
+searches, synopsis, reviews, and general information about movies
+
+● Implemented the backend framework using Spring Boot and Java. The backend was consistent with a database system which
+stored the registered account, parsing the information received from the TMDB API, and eventually sending it to the front-end
+team leveraging the API we created with Postmate
+
+● Tech Stack: Java, MySQL, Postmate, Spring Boot, React, HTML/CSS, Docker
 
 ### NFL Wordle
 
