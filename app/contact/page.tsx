@@ -9,24 +9,24 @@ export default function ContactPage() {
       <div className="px-4 max-w-[800px] mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center">Contact Me</h1>
         <div className="space-y-8">
-          <div className="bg-zinc-900 rounded-lg p-6 flex flex-col items-center space-y-4">
+          <div className="bg-zinc-900 rounded-lg force-rounded p-6 flex flex-col items-center space-y-4">
             <Mail className="w-12 h-12 text-blue-500" />
             <h2 className="text-xl font-semibold">Email</h2>
             <p className="text-zinc-400">reyrjarroneto@gmail.com</p>
             <Button
               onClick={() => (window.location.href = "mailto:reyrjarroneto@gmail.com")}
-              className="bg-blue-500 hover:bg-blue-600"
+              className="bg-blue-500 hover:bg-blue-600 force-rounded"
             >
               Send Email
             </Button>
           </div>
-          <div className="bg-zinc-900 rounded-lg p-6 flex flex-col items-center space-y-4">
+          <div className="bg-zinc-900 rounded-lg force-rounded p-6 flex flex-col items-center space-y-4">
             <Linkedin className="w-12 h-12 text-blue-500" />
             <h2 className="text-xl font-semibold">LinkedIn</h2>
             <p className="text-zinc-400">Connect with me on LinkedIn</p>
             <Button
               onClick={() => window.open("https://www.linkedin.com/in/reynaldo-jarro-rj/", "_blank")}
-              className="bg-blue-500 hover:bg-blue-600"
+              className="bg-blue-500 hover:bg-blue-600 force-rounded"
             >
               View Profile
             </Button>
