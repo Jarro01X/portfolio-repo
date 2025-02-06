@@ -261,7 +261,7 @@ export default function ProjectsPage() {
               variant="outline"
               size="sm"
               className={`
-                h-9 px-3 border-zinc-800 rounded-md
+                h-9 px-3 border-zinc-800 rounded-lg
                 ${showTagFilter ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}
               `}
             >
