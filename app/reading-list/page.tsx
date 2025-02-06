@@ -282,7 +282,7 @@ export default function ReadingListPage() {
               variant="outline"
               size="sm"
               className={`
-                h-9 px-3 border-zinc-800
+                h-9 px-3 border-zinc-800 force-rounded
                 ${showTagChart ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}
               `}
             >
@@ -294,7 +294,7 @@ export default function ReadingListPage() {
               variant="outline"
               size="sm"
               className={`
-                h-9 px-3 border-zinc-800
+                h-9 px-3 border-zinc-800 force-rounded
                 ${showTagFilter ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}
               `}
             >

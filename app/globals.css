@@ -18,3 +18,12 @@
   }
 }
 
+.rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+.force-rounded {
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+}
+
