@@ -274,8 +274,7 @@ export default function ProjectsPage() {
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`
-                    px-4 py-2 text-sm rounded-md transition-colors
-                    ${selectedCategory === category ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
+                    px-4 py-2 text-sm rounded-xl transition-colors ${selectedCategory === category ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
                   `}
                 >
                   {category}
