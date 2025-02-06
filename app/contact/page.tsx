@@ -25,7 +25,7 @@ export default function ContactPage() {
             <h2 className="text-xl font-semibold">LinkedIn</h2>
             <p className="text-zinc-400">Connect with me on LinkedIn</p>
             <Button
-              onClick={() => window.open("https://www.linkedin.com/in/your-profile", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/reynaldo-jarro-rj/", "_blank")}
               className="bg-blue-500 hover:bg-blue-600"
             >
               View Profile
