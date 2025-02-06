@@ -174,7 +174,7 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={`${skill.name}-${skillIndex}`}
-                    className="bg-zinc-800 rounded-lg p-4 flex flex-col items-center justify-center group hover:bg-zinc-700 transition-all w-24 h-24 shadow-md hover:shadow-lg"
+                    className="bg-zinc-800 rounded-xl p-4 flex flex-col items-center justify-center group hover:bg-zinc-700 transition-all w-24 h-24 shadow-md hover:shadow-lg"
                   >
                     <div className="w-12 h-12 mb-3 relative">
                       <Image
