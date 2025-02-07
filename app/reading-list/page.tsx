@@ -275,6 +275,8 @@ export default function ReadingListPage() {
                 setSelectedType("book")
                 setSelectedTags([])
               }}
+              variant="outline"
+              size="sm"
               className={`h-9 px-3 force-rounded border-zinc-700 bg-transparent ${
                 selectedType === "book"
                   ? "bg-zinc-800 text-white"
