@@ -246,8 +246,10 @@ export default function ReadingListPage() {
               }}
               variant="outline"
               size="sm"
-              className={`h-9 px-3 force-rounded ${
-                selectedType === "all" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"
+              className={`h-9 px-3 force-rounded border-zinc-700 bg-transparent ${
+                selectedType === "all"
+                  ? "bg-zinc-800 text-white"
+                  : "text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
               }`}
             >
               All
