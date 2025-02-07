@@ -244,9 +244,11 @@ export default function ReadingListPage() {
                 setSelectedType("all")
                 setSelectedTags([])
               }}
-              variant={selectedType === "all" ? "default" : "outline"}
+              variant="outline"
               size="sm"
-              className="h-9 px-3"
+              className={`h-9 px-3 force-rounded ${
+                selectedType === "all" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"
+              }`}
             >
               All
             </Button>
