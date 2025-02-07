@@ -146,13 +146,14 @@ export function Skills() {
             <Button
               key={roleSkills.role}
               onClick={() => setSelectedRole(roleSkills.role)}
-              variant={selectedRole === roleSkills.role ? "default" : "outline"}
+              variant="outline"
               className={`
-                h-9 px-5 rounded-md
+                h-9 px-5 force-rounded border-zinc-700 bg-transparent
                 ${
                   selectedRole === roleSkills.role
-                    ? "bg-[#4B67F5] hover:bg-[#4B67F5]/90"
-                    : "border-zinc-800 text-white hover:bg-zinc-800"
+                  selectedRole === roleSkills.role
+                    ? "bg-[#4B67F5] hover:bg-[#4B67F5]/90 text-white border-[#4B67F5]"
+                    : "text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
                 }
               `}
             >
@@ -161,7 +162,7 @@ export function Skills() {
           ))}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-3 mb-12">
           {currentSkills.categories.map((category, index) => (
             <div key={`category-${index}`} className="flex justify-center">
               <div
@@ -174,7 +175,9 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={`${skill.name}-${skillIndex}`}
-                    className="bg-zinc-800 rounded-xl p-4 flex flex-col items-center justify-center group hover:bg-zinc-700 transition-all w-24 h-24 shadow-md hover:shadow-lg"
+                    className=                    className="bg-zinc-800/50 force-rounded 
+                    p-4 flex flex-col items-center justify-center group hover:bg-zinc-700/50 transition-all 
+                    w-24 h-24 shadow-md hover:shadow-lg overflow-hidden border border-zinc-700/50"
                   >
                     <div className="w-12 h-12 mb-3 relative">
                       <Image
