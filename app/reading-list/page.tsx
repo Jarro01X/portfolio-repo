@@ -259,9 +259,13 @@ export default function ReadingListPage() {
                 setSelectedType("article")
                 setSelectedTags([])
               }}
-              variant={selectedType === "article" ? "default" : "outline"}
+              variant="outline"
               size="sm"
-              className="h-9 px-3"
+              className={`h-9 px-3 force-rounded border-zinc-700 bg-transparent ${
+                selectedType === "article"
+                  ? "bg-zinc-800 text-white"
+                  : "text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
+              }`}
             >
               <Newspaper className="w-4 h-4 mr-2" />
               Articles
@@ -271,9 +275,11 @@ export default function ReadingListPage() {
                 setSelectedType("book")
                 setSelectedTags([])
               }}
-              variant={selectedType === "book" ? "default" : "outline"}
-              size="sm"
-              className="h-9 px-3"
+              className={`h-9 px-3 force-rounded border-zinc-700 bg-transparent ${
+                selectedType === "book"
+                  ? "bg-zinc-800 text-white"
+                  : "text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
+              }`}
             >
               <Book className="w-4 h-4 mr-2" />
               Books
