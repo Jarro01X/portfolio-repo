@@ -261,20 +261,20 @@ export default function ProjectsPage() {
               variant="outline"
               size="sm"
               className={`
-                h-9 px-3 border-zinc-800 rounded-lg
+                h-9 px-3 border-zinc-800 force-rounded
                 ${showTagFilter ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}
               `}
             >
               <Tag className="w-4 h-4 mr-2" />
               {showTagFilter ? "Hide Tags" : "Show Tags"}
             </Button>
-            <div className="inline-flex rounded-lg border border-zinc-800 p-1">
+            <div className="inline-flex force-rounded border border-zinc-800 p-1">
               {(["All", "Development", "Security"] as ProjectCategory[]).map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`
-                    px-4 py-2 text-sm rounded-md transition-colors
+                    px-4 py-2 text-sm force-rounded transition-colors
                     ${selectedCategory === category ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
                   `}
                 >
@@ -292,7 +292,7 @@ export default function ProjectsPage() {
                     key={tag}
                     onClick={() => toggleTag(tag)}
                     className={`
-                      px-3 py-1 text-xs rounded-full transition-colors
+                      px-3 py-1 text-xs force-rounded transition-colors
                       ${
                         selectedTags.includes(tag)
                           ? "bg-blue-600 text-white"
@@ -308,7 +308,7 @@ export default function ProjectsPage() {
               {selectedTags.length > 0 && (
                 <button
                   onClick={() => setSelectedTags([])}
-                  className="text-sm text-zinc-400 hover:text-white flex items-center"
+                  className="text-sm text-zinc-400 hover:text-white flex items-center force-rounded"
                 >
                   Clear filters <X className="w-4 h-4 ml-1" />
                 </button>
@@ -319,9 +319,9 @@ export default function ProjectsPage() {
 
         <div className="space-y-6">
           {sortedProjects.map((project) => (
-            <div key={project.title} className="border border-zinc-800 rounded-lg p-6 space-y-4 relative">
+            <div key={project.title} className="border border-zinc-800 force-rounded p-6 space-y-4 relative">
               {project.isWIP && (
-                <span className="absolute top-2 right-2 bg-zinc-800 text-blue-400 text-xs font-medium px-2 py-1 rounded-full border border-blue-500">
+                <span className="absolute top-2 right-2 bg-zinc-800 text-blue-400 text-xs font-medium px-2 py-1 force-rounded border border-blue-500">
                   WIP
                 </span>
               )}
@@ -343,7 +343,7 @@ export default function ProjectsPage() {
                   <span
                     key={tech}
                     className={`
-                      px-3 py-1 rounded-full text-xs
+                      px-3 py-1 forced-rounded text-xs
                       ${selectedTags.includes(tech) ? "bg-blue-600 text-white" : "bg-zinc-900 text-zinc-400"}
                     `}
                   >
@@ -357,7 +357,7 @@ export default function ProjectsPage() {
                     onClick={() => toggleProjectExpansion(project.title)}
                     variant="outline"
                     size="sm"
-                    className="mt-2 text-blue-400 hover:text-blue-300"
+                    className="mt-2 text-blue-400 hover:text-blue-300 force-rounded"
                   >
                     {expandedProject === project.title ? (
                       <>
@@ -372,7 +372,7 @@ export default function ProjectsPage() {
                     )}
                   </Button>
                   {expandedProject === project.title && (
-                    <div className="mt-4 text-zinc-400 text-sm leading-relaxed whitespace-pre-wrap">
+                    <div className="mt-4 text-zinc-400 text-sm leading-relaxed whitespace-pre-wrap force-rounded">
                       {project.extendedDescription}
                     </div>
                   )}
