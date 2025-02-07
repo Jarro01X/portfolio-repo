@@ -151,7 +151,6 @@ export function Skills() {
                 h-9 px-5 force-rounded border-zinc-700 bg-transparent
                 ${
                   selectedRole === roleSkills.role
-                  selectedRole === roleSkills.role
                     ? "bg-[#4B67F5] hover:bg-[#4B67F5]/90 text-white border-[#4B67F5]"
                     : "text-zinc-400 hover:bg-zinc-800 hover:text-white hover:border-zinc-600"
                 }
@@ -175,7 +174,7 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={`${skill.name}-${skillIndex}`}
-                    className=                    className="bg-zinc-800/50 force-rounded 
+                    className="bg-zinc-800/50 force-rounded 
                     p-4 flex flex-col items-center justify-center group hover:bg-zinc-700/50 transition-all 
                     w-24 h-24 shadow-md hover:shadow-lg overflow-hidden border border-zinc-700/50"
                   >
