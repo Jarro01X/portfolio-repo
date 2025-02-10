@@ -71,7 +71,7 @@ const projects: OpenSourceProject[] = [
   },
   {
     name: "Gubble",
-    description: "Threat hunting and incident response tool for AWS infrastructure",
+    description: "A tool designed to audit Google Workspace group settings",
     link: "https://github.com/LowOrbitSecurity/gubble",
     tags: ["Security", "AWS", "Python", "Threat Hunting"],
   },
