@@ -73,7 +73,7 @@ const projects: OpenSourceProject[] = [
     name: "Gubble",
     description: "A tool designed to audit Google Workspace group settings",
     link: "https://github.com/LowOrbitSecurity/gubble",
-    tags: ["Security", "AWS", "Python", "Threat Hunting"],
+    tags: ["Security", "GCP", "Go", "Corporate Security"],
   },
   {
     name: "Kubenomicon",
