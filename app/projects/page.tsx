@@ -82,7 +82,7 @@ const projects: Project[] = [
      * Continuously monitor HTTP requests
      * Convert pcap results to CSV files
      * Automatically access newly created accounts
-     * Transfer money to our team's account using multiple shells
+     * Transfer money to our team's account using shell instances automatically created by the Python Script
 
 2. Red and Blue Team Member:
    In the second CTF, I played dual roles in both the Red and Blue teams. Our main task was to create and implement hashing protocols to secure password information, which would then be shared with other groups for cracking attempts.
