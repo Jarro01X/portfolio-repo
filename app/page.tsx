@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { WorkExperience } from "@/components/sections/WorkExperience"
+import { OpenSourceContributions } from "@/components/sections/OpenSourceContributions"
 import { Skills } from "@/components/sections/Skills"
 import { useEffect, useRef } from "react"
 

@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button"
+import { ExternalLink } from "lucide-react"
+
 interface Contribution {
   project: string
   description: string
@@ -8,38 +11,13 @@ interface Contribution {
 
 const contributions: Contribution[] = [
   {
-    project: "React",
-    description: "A JavaScript library for building user interfaces",
-    contributions: [
-      "Implemented a new feature for handling async rendering",
-      "Fixed a bug in the reconciliation algorithm",
-      "Improved documentation for hooks",
-    ],
-    technologies: ["JavaScript", "TypeScript", "React"],
-    link: "https://github.com/facebook/react",
+    project: "Nuclei",
+    description: "Fast and customizable vulnerability scanner based on simple YAML-based DSL.",
+    contributions: ["Translated README to Portuguese (Brazil)", "Improved documentation for international users"],
+    technologies: ["Go", "YAML", "Security"],
+    link: "https://github.com/projectdiscovery/nuclei",
   },
-  {
-    project: "TensorFlow",
-    description: "An open-source machine learning framework",
-    contributions: [
-      "Optimized performance for GPU computations",
-      "Added support for a new neural network layer type",
-      "Contributed to the TensorFlow.js project",
-    ],
-    technologies: ["Python", "C++", "CUDA", "JavaScript"],
-    link: "https://github.com/tensorflow/tensorflow",
-  },
-  {
-    project: "VS Code",
-    description: "A code editor redefined and optimized for building and debugging modern web and cloud applications",
-    contributions: [
-      "Developed a new extension for improved TypeScript support",
-      "Fixed accessibility issues in the UI",
-      "Contributed to the Python language server",
-    ],
-    technologies: ["TypeScript", "JavaScript", "Python"],
-    link: "https://github.com/microsoft/vscode",
-  },
+  // You can add more contributions here in the future
 ]
 
 export function OpenSourceContributions() {
@@ -66,7 +44,7 @@ export function OpenSourceContributions() {
                 </div>
               </div>
               <div className="mb-4">
-                <p className="text-sm mb-2">Key Contributions:</p>
+                <p className="text-sm mb-2">Contributions:</p>
                 <ul className="space-y-2">
                   {contribution.contributions.map((item, i) => (
                     <li key={i} className="text-zinc-400 text-sm pl-4 relative">
@@ -76,7 +54,7 @@ export function OpenSourceContributions() {
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="mb-4">
                 <p className="text-sm mb-2">Technologies:</p>
                 <div className="flex flex-wrap gap-2">
                   {contribution.technologies.map((tech, i) => (
@@ -86,6 +64,19 @@ export function OpenSourceContributions() {
                   ))}
                 </div>
               </div>
+              {contribution.project === "Nuclei" && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-4"
+                  onClick={() =>
+                    window.open("https://github.com/projectdiscovery/nuclei/blob/dev/README_PT-BR.md", "_blank")
+                  }
+                >
+                  View Portuguese README
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </Button>
+              )}
             </div>
           ))}
         </div>
@@ -93,4 +84,3 @@ export function OpenSourceContributions() {
     </section>
   )
 }
-
