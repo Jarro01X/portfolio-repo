@@ -70,6 +70,10 @@ const skillsByRole: RoleSkills[] = [
             image:
               "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
           },
+          {
+            name: "GCP",
+            image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+          },
           { name: "Docker", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
           {
             name: "Kubernetes",
