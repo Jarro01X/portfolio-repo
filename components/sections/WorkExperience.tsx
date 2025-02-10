@@ -6,7 +6,7 @@ interface Experience {
   achievements: string[]
   skills: string[]
   techStack: string[]
-  location?: string // Added location field
+  location?: string
 }
 
 const experiences: Experience[] = [
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
     period: "May 2023 - August 2023",
     location: "Seattle, WA",
     description:
-      "During my internship at the Amazon Ads' Data Management Team I was responsible for developing and designing from scratch a Data Monitoring tool for an infrastructure migration. Our system was used to manage and store advertisement data for platforms such as Twitch (more than 240 million unique users)",
+      "During my internship at Amazon Ads' Data Management Team I was responsible for developing and designing from scratch a Data Monitoring tool for an infrastructure migration. Our system was used to manage and store advertisement data for platforms such as Twitch (more than 240 million unique users)",
     achievements: [
       "Developed a Java-based tool to reconcile data inconsistencies",
       "Utilized EventBridge to trigger AWS Lambda for regular data consistency checks across multiple sources",
