@@ -17,7 +17,6 @@ const contributions: Contribution[] = [
     technologies: ["Go", "YAML", "Security"],
     link: "https://github.com/projectdiscovery/nuclei",
   },
-  // You can add more contributions here in the future
 ]
 
 export function OpenSourceContributions() {
