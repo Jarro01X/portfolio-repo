@@ -67,7 +67,7 @@ export function OpenSourceContributions() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="mt-4"
+                  className="mt-4 force-rounded"
                   onClick={() =>
                     window.open("https://github.com/projectdiscovery/nuclei/blob/dev/README_PT-BR.md", "_blank")
                   }
