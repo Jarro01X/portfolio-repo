@@ -401,7 +401,7 @@ export default function ReadingListPage() {
 
         <div className="space-y-6">
           {filteredItems.map((item) => (
-            <article key={item.id} className="border border-zinc-800 rounded-lg p-6 space-y-4">
+            <article key={item.id} className="border border-zinc-800 force-rounded p-6 space-y-4">
               <div className="flex justify-between items-start mb-4">
                 <h2 className="text-xl font-semibold">
                   <a

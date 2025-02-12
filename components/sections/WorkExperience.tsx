@@ -16,7 +16,7 @@ const experiences: Experience[] = [
     period: "September 2024 - Present",
     location: "Mountain View, CA",
     description:
-      "Responsible for securing old and new features, patching present security issues, and develop security solutions",
+      "Responsible for securing old and new features, patching present security issues, and developing security solutions",
     achievements: [
       "Identified and patched Stored and Reflected XSS, NoSQL Injections, IDORs, and JWT exploitation vulnerabilities",
       "Developed automated SAST and DAST solutions using CodeQL, Nuclei, and GitHub Actions",
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
     period: "May 2023 - August 2023",
     location: "Seattle, WA",
     description:
-      "During my internship at Amazon Ads' Data Management Team I was responsible for developing and designing from scratch a Data Monitoring tool for an infrastructure migration. Our system was used to manage and store advertisement data for platforms such as Twitch (more than 240 million unique users)",
+      "During my internship at Amazon Ads' Data Management Team, I was responsible for developing and designing from scratch a Data Monitoring tool for an infrastructure migration. Our system was used to manage and store advertisement data for platforms such as Twitch (more than 240 million unique users)",
     achievements: [
       "Developed a Java-based tool to reconcile data inconsistencies",
       "Utilized EventBridge to trigger AWS Lambda for regular data consistency checks across multiple sources",
