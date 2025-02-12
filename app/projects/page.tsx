@@ -343,7 +343,7 @@ export default function ProjectsPage() {
                   <span
                     key={tech}
                     className={`
-                      px-3 py-1 forced-rounded text-xs
+                      px-3 py-1 force-rounded text-xs
                       ${selectedTags.includes(tech) ? "bg-blue-600 text-white" : "bg-zinc-900 text-zinc-400"}
                     `}
                   >
