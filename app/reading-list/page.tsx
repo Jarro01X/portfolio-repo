@@ -17,6 +17,26 @@ interface ReadingItem {
 
 const readingItems: ReadingItem[] = [
   {
+    id: "crowdstrike-latam-malware",
+    title: "A Look Back: The Evolution of Latin American eCrime Malware in 2024",
+    url: "https://www.crowdstrike.com/en-us/blog/latam-ecrime-malware-evolution-2024/",
+    date: "2024-12-16",
+    authors: ["Kevin Ratto"],
+    tags: ["Security", "Threat Research", "Malware"],
+    type: "article",
+    company: "Crowdstrike",
+  },
+  {
+    id: "crowdstrike-hunting-cloud-threats",
+    title: "How CrowdStrike Hunts, Identifies and Defeats Cloud-Focused Threats",
+    url: "https://www.crowdstrike.com/en-us/blog/how-crowdstrike-hunts-identifies-and-defeats-cloud-threats/",
+    date: "2024-09-26",
+    authors: ["Counter Adversary Operations"],
+    tags: ["Security", "Threat Research", "Malware", "Cloud"],
+    type: "article",
+    company: "Crowdstrike",
+  },
+  {
     id: "cloudflare-incident-2025",
     title: "Cloudflare Incident on February 6, 2025",
     url: "https://blog.cloudflare.com/cloudflare-incident-on-february-6-2025/",
