@@ -189,7 +189,7 @@ export default function OpenSourcePage() {
           {filteredProjects.map((project) => (
             <div
               key={project.name}
-              className="border border-zinc-800 rounded-lg p-6 flex flex-col justify-between h-full"
+              className="border border-zinc-800 force-rounded p-6 flex flex-col justify-between h-full"
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-start">
