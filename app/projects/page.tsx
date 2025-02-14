@@ -248,12 +248,6 @@ export default function ProjectsPage() {
       <div className="px-4 max-w-[1400px] mx-auto">
         <h1 className="text-3xl font-bold mb-12 text-center">Projects</h1>
 
-        <p className="text-zinc-400 text-sm mb-8 text-center">
-          I apologize that I don't have code repositories for many of these projects, as most were completed during my
-          time in college. However, I assure you that all projects after "Personal Portfolio Website" and "Heph4estus"
-          will have associated repositories.
-        </p>
-
         <div className="flex flex-col items-center mb-12 space-y-6">
           <div className="flex items-center gap-4">
             <Button
