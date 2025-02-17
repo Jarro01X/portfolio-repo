@@ -17,6 +17,16 @@ interface ReadingItem {
 
 const readingItems: ReadingItem[] = [
   {
+    id: "microsoft-redteam-ai-100-products",
+    title: "3 takeaways from red teaming 100 generative AI products",
+    url: "https://www.microsoft.com/en-us/security/blog/2025/01/13/3-takeaways-from-red-teaming-100-generative-ai-products/",
+    date: "2025-01-13",
+    authors: ["Blake Bullwinkel", "Ram Shankar Siva Kumar"],
+    tags: ["Security", "AI", "Red Team"],
+    type: "article",
+    company: "Microsoft",
+  },
+  {
     id: "crowdstrike-latam-malware",
     title: "A Look Back: The Evolution of Latin American eCrime Malware in 2024",
     url: "https://www.crowdstrike.com/en-us/blog/latam-ecrime-malware-evolution-2024/",
