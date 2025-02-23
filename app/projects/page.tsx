@@ -10,7 +10,7 @@ interface Project {
   title: string
   description: string
   keyAspects: string[]
-  category: "Development" | "Security"
+  categories: ("Development" | "Security")[]
   technologies: string[]
   isWIP?: boolean
   extendedDescription?: string
@@ -27,7 +27,7 @@ const projects: Project[] = [
       "Dynamic content rendering",
       "Optimized performance and accessibility",
     ],
-    category: "Development",
+    categories: ["Development"],
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
   },
   {
@@ -40,8 +40,24 @@ const projects: Project[] = [
       "Instantiates various security tools",
       "Optimized for different tasks and providers",
     ],
-    category: "Security",
+    categories: ["Development", "Security"],
     technologies: ["Go", "Terraform", "Bash", "AWS", "GCP", "DigitalOcean", "Azure"],
+    isWIP: true,
+  },
+  {
+    title: "Th0th",
+    description:
+      "Developing an open-source framework for distributed, privacy-preserving training of malware detection models across hybrid cloud and on-premise environments. The system combines secure aggregation and adversarial defenses to mitigate model poisoning and evasion attacks, with robust orchestration for scalable training workflows. Built on PyTorch Lightning, TenSEAL, and Kubeflow, it enables collaborative model development while safeguarding data privacy and integrity.",
+    keyAspects: [
+      "Distributed training across multi-cloud and on-premise nodes",
+      "Secure aggregation via homomorphic encryptionand multi-party computationto protect model updates",
+      "Cybersecurity integration: Adversarial training (ART), node authentication (SPIFFE/SPIRE), and drift detection (Evidently AI)",
+      "Automated pipeline management with Kubeflow Pipelines for fault-tolerant workflows",
+      "Cloud-agnostic deployment (AWS, GCP)",
+      "Version-controlled datasets (DVC), feature validation (Feast), and preprocessing automation",
+    ],
+    categories: ["Development", "Security"],
+    technologies: ["Python", "Terraform", "AWS", "GCP", "Kubernetes", "Pytorch", "Encryption"],
     isWIP: true,
   },
   {
@@ -54,7 +70,7 @@ const projects: Project[] = [
       "Developed custom exploitation scripts",
       "Emulated real-life scenarios",
     ],
-    category: "Security",
+    categories: ["Security"],
     technologies: [
       "nmap",
       "tcpdump",
@@ -105,7 +121,7 @@ These experiences significantly enhanced my practical skills in cybersecurity, c
       "Performed privilege escalation on compromised systems",
       "Worked with both Linux and Windows operating systems",
     ],
-    category: "Security",
+    categories: ["Security"],
     technologies: [
       "Metasploit",
       "Windows Exploitation",
@@ -150,7 +166,7 @@ This project provided hands-on experience in real-world ethical hacking scenario
       "Integrated with TMDB API",
       "Developed REST API",
     ],
-    category: "Development",
+    categories: ["Development"],
     technologies: ["Java", "MySQL", "Postmate", "Spring Boot", "React", "HTML/CSS", "Docker"],
   },
   {
@@ -163,7 +179,7 @@ This project provided hands-on experience in real-world ethical hacking scenario
       "Designed AWS infrastructure",
       "Integrated multiple AWS services",
     ],
-    category: "Development",
+    categories: ["Development"],
     technologies: ["Lambda", "S3", "DynamoDB", "Node.js", "IAM", "Serverless", "React"],
     extendedDescription: `This project was a collaborative effort to create a website for researchers that automates the creation of customizable CRUDs (Create, Read, Update, Delete operations). My primary role was to design and implement the AWS infrastructure that powers this automation.
 
@@ -200,7 +216,7 @@ This project provided valuable experience in designing scalable, serverless arch
       "Collaborated with backend team on API data parsing and MySQL database architecture",
       "Developed multiplayer functionality for user engagement",
     ],
-    category: "Development",
+    categories: ["Development"],
     technologies: ["HTML/CSS", "Bootstrap", "JavaScript", "Figma", "MySQL"],
   },
 ]
@@ -222,7 +238,7 @@ export default function ProjectsPage() {
   const filteredProjects = useMemo(() => {
     return projects.filter(
       (project) =>
-        (selectedCategory === "All" || project.category === selectedCategory) &&
+        (selectedCategory === "All" || project.categories.includes(selectedCategory as "Development" | "Security")) &&
         (selectedTags.length === 0 || selectedTags.every((tag) => project.technologies.includes(tag))),
     )
   }, [selectedCategory, selectedTags])
