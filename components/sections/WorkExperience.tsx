@@ -23,7 +23,7 @@ const experiences: Experience[] = [
       "Created a workflow that integrates security testing into the CI/CD pipeline",
     ],
     skills: ["SAST", "DAST", "Vulnerability Assessment", "CI/CD Integration", "Security Automation"],
-    techStack: ["Next.js", "Node.js", "DigitalOcean", "CodeQL", "MongoDB", "JWT", "GitHub Actions", "Nuclei"],
+    techStack: ["Next.js", "Node.js", "DigitalOcean", "CodeQL", "MongoDB", "JWT", "GitHub Actions", "Nuclei", "PostgreSQL","React"],
   },
   {
     title: "Software Engineer Intern",

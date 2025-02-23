@@ -51,13 +51,13 @@ const projects: Project[] = [
     keyAspects: [
       "Distributed training across multi-cloud and on-premise nodes",
       "Secure aggregation via homomorphic encryptionand multi-party computationto protect model updates",
-      "Cybersecurity integration: Adversarial training (ART), node authentication (SPIFFE/SPIRE), and drift detection (Evidently AI)",
+      "Cybersecurity integration: Adversarial training, node authentication, and drift detection",
       "Automated pipeline management with Kubeflow Pipelines for fault-tolerant workflows",
       "Cloud-agnostic deployment (AWS, GCP)",
-      "Version-controlled datasets (DVC), feature validation (Feast), and preprocessing automation",
+      "Version-controlled datasets, feature validation, and preprocessing automation",
     ],
     categories: ["Development", "Security"],
-    technologies: ["Python", "Terraform", "AWS", "GCP", "Kubernetes", "Pytorch", "Encryption"],
+    technologies: ["Python", "Terraform", "AWS", "GCP", "Kubernetes", "PyTorch", "Encryption", "Data Pipelines"],
     isWIP: true,
   },
   {
