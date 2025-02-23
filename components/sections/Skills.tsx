@@ -55,6 +55,8 @@ const skillsByRole: RoleSkills[] = [
             image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
           },
           { name: "MySQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+          { name: "GraphQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+          { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
           { name: "Spring", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
         ],
       },
@@ -129,6 +131,22 @@ const skillsByRole: RoleSkills[] = [
         skills: [
           { name: "Embedding", image: "https://img.icons8.com/cotton/64/000000/artificial-intelligence.png" },
           { name: "RAG", image: "https://img.icons8.com/color/48/000000/artificial-intelligence.png" },
+          { name: "PyTorch", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+          {
+            name: "Kubeflow Pipelines",
+            image:
+              "https://raw.githubusercontent.com/kubeflow/kubeflow/master/components/centraldashboard/public/assets/logo.svg",
+          },
+          {
+            name: "Feast",
+            image: "https://raw.githubusercontent.com/feast-dev/feast/master/docs/assets/feast_logo.png",
+          },
+          {
+            name: "Prefect",
+            image: "https://avatars.githubusercontent.com/u/39270919?s=200&v=4",
+          },
+          { name: "Apache Airflow", image: "https://airflow.apache.org/images/feature-image.png" },
+          { name: "DVC", image: "https://dvc.org/img/logo-github-readme.png" },
         ],
       },
     ],
