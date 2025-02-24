@@ -50,7 +50,7 @@ const projects: Project[] = [
       "Developing an open-source framework for distributed, privacy-preserving training of malware detection models across hybrid cloud and on-premise environments. The system combines secure aggregation and adversarial defenses to mitigate model poisoning and evasion attacks, with robust orchestration for scalable training workflows. Built on PyTorch Lightning, TenSEAL, and Kubeflow, it enables collaborative model development while safeguarding data privacy and integrity.",
     keyAspects: [
       "Distributed training across multi-cloud and on-premise nodes",
-      "Secure aggregation via homomorphic encryptionand multi-party computationto protect model updates",
+      "Secure aggregation via homomorphic encryption and multi-party computation to protect model updates",
       "Cybersecurity integration: Adversarial training, node authentication, and drift detection",
       "Automated pipeline management with Kubeflow Pipelines for fault-tolerant workflows",
       "Cloud-agnostic deployment (AWS, GCP)",
@@ -167,7 +167,7 @@ This project provided hands-on experience in real-world ethical hacking scenario
       "Developed REST API",
     ],
     categories: ["Development"],
-    technologies: ["Java", "MySQL", "Postmate", "Spring Boot", "React", "HTML/CSS", "Docker"],
+    technologies: ["Java", "PostgreSQL", "Postmate", "Spring Boot", "React", "HTML/CSS", "Docker"],
   },
   {
     title: "Automated CRUD AWS",
