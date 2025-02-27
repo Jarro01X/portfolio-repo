@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Tag, X } from "lucide-react"
+import { ExternalLink, Tag, X, Code, GitFork } from "lucide-react"
+import { OpenSourceContributions } from "@/components/sections/OpenSourceContributions"
 
 interface OpenSourceProject {
   name: string
@@ -110,6 +111,7 @@ const projects: OpenSourceProject[] = [
 export default function OpenSourcePage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [showTagFilter, setShowTagFilter] = useState(false)
+  const [activeView, setActiveView] = useState<"projects" | "contributions">("projects")
 
   const allTags = useMemo(() => {
     const tags = new Set<string>()
@@ -138,91 +140,122 @@ export default function OpenSourcePage() {
           these projects, or the project itself.
         </p>
 
-        <div className="mb-8 flex flex-col items-center space-y-4">
-          <Button
-            onClick={() => setShowTagFilter(!showTagFilter)}
-            variant="outline"
-            size="sm"
-            className={`
-              h-9 px-3 border-zinc-800 force-rounded
-              ${showTagFilter ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}
-            `}
-          >
-            <Tag className="w-4 h-4 mr-2" />
-            {showTagFilter ? "Hide Tags" : "Show Tags"}
-          </Button>
-
-          {showTagFilter && (
-            <>
-              <div className="flex flex-wrap justify-center gap-2">
-                {allTags.map((tag) => (
-                  <button
-                    key={tag}
-                    onClick={() => toggleTag(tag)}
-                    className={`
-                      px-3 py-1 text-xs rounded-full transition-colors
-                      ${
-                        selectedTags.includes(tag)
-                          ? "bg-blue-600 text-white"
-                          : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800"
-                      }
-                    `}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
-
-              {selectedTags.length > 0 && (
-                <button
-                  onClick={() => setSelectedTags([])}
-                  className="text-sm text-zinc-400 hover:text-white flex items-center"
-                >
-                  Clear filters <X className="w-4 h-4 ml-1" />
-                </button>
-              )}
-            </>
-          )}
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.name}
-              className="border border-zinc-800 force-rounded p-6 flex flex-col justify-between h-full"
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex rounded-lg border border-zinc-800 p-1">
+            <button
+              onClick={() => setActiveView("projects")}
+              className={`
+        px-4 py-2 text-sm rounded-md transition-colors flex items-center
+        ${activeView === "projects" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
+      `}
             >
-              <div className="space-y-4">
-                <div className="flex justify-between items-start">
-                  <h2 className="text-xl font-semibold">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-blue-400 transition-colors flex items-center"
-                    >
-                      {project.name}
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </a>
-                  </h2>
-                </div>
-                <p className="text-zinc-400 text-sm">{project.description}</p>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`
-                      px-3 py-1 rounded-full text-xs
-                      ${selectedTags.includes(tag) ? "bg-blue-600 text-white" : "bg-zinc-900 text-zinc-400"}
-                    `}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+              <GitFork className="w-4 h-4 mr-2" />
+              Projects I Support
+            </button>
+            <button
+              onClick={() => setActiveView("contributions")}
+              className={`
+        px-4 py-2 text-sm rounded-md transition-colors flex items-center
+        ${activeView === "contributions" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
+      `}
+            >
+              <Code className="w-4 h-4 mr-2" />
+              My Contributions
+            </button>
+          </div>
         </div>
+
+        {activeView === "projects" ? (
+          <>
+            <div className="mb-8 flex flex-col items-center space-y-4">
+              <Button
+                onClick={() => setShowTagFilter(!showTagFilter)}
+                variant="outline"
+                size="sm"
+                className={`
+          h-9 px-3 border-zinc-800
+          ${showTagFilter ? "bg-zinc-800 text-white" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}
+        `}
+              >
+                <Tag className="w-4 h-4 mr-2" />
+                {showTagFilter ? "Hide Tags" : "Show Tags"}
+              </Button>
+
+              {showTagFilter && (
+                <>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {allTags.map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => toggleTag(tag)}
+                        className={`
+                  px-3 py-1 text-xs rounded-full transition-colors
+                  ${
+                    selectedTags.includes(tag)
+                      ? "bg-blue-600 text-white"
+                      : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800"
+                  }
+                `}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+
+                  {selectedTags.length > 0 && (
+                    <button
+                      onClick={() => setSelectedTags([])}
+                      className="text-sm text-zinc-400 hover:text-white flex items-center"
+                    >
+                      Clear filters <X className="w-4 h-4 ml-1" />
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.name}
+                  className="border border-zinc-800 rounded-lg p-6 flex flex-col justify-between h-full"
+                >
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-start">
+                      <h2 className="text-xl font-semibold">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-400 transition-colors flex items-center"
+                        >
+                          {project.name}
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </a>
+                      </h2>
+                    </div>
+                    <p className="text-zinc-400 text-sm">{project.description}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`
+                  px-3 py-1 rounded-full text-xs
+                  ${selectedTags.includes(tag) ? "bg-blue-600 text-white" : "bg-zinc-900 text-zinc-400"}
+                `}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+          <OpenSourceContributions />
+        )}
       </div>
     </main>
   )
