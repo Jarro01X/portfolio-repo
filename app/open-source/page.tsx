@@ -145,7 +145,7 @@ export default function OpenSourcePage() {
             <button
               onClick={() => setActiveView("projects")}
               className={`
-        px-4 py-2 text-sm rounded-md transition-colors flex items-center
+        px-4 py-2 text-sm force-rounded transition-colors flex items-center
         ${activeView === "projects" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
       `}
             >
@@ -155,7 +155,7 @@ export default function OpenSourcePage() {
             <button
               onClick={() => setActiveView("contributions")}
               className={`
-        px-4 py-2 text-sm rounded-md transition-colors flex items-center
+        px-4 py-2 text-sm force-rounded transition-colors flex items-center
         ${activeView === "contributions" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
       `}
             >
