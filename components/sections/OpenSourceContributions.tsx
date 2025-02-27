@@ -97,8 +97,6 @@ export function OpenSourceContributions() {
                 </Button>
               )}
             </div>
-            )}
-          </div>
           ))}
         </div>
       </div>
