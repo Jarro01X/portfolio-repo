@@ -44,17 +44,27 @@ export default function Home() {
                 My curiosity has taken me to Infrastructure, Cloud Computing, Full-Stack Development, and
                 Cybersecurity. Recently, I've been diving into the world of AI as well.
               </p>
-              <p className="text-base text-zinc-400 leading-relaxed">
-                If you're here from a job application, I encourage you to explore my{" "}
+              <p className="text-base text-zinc-400 leading-relaxed">Here is a short description of some pages:</p>
+              <ul className="list-disc list-inside space-y-2 text-base text-zinc-400 leading-relaxed ml-4">
+                <li>
+                  <Link href="/open-source" className="text-blue-400 hover:text-blue-300">
+                    Open Source
+                  </Link>
+                  : A showcase of projects I support and my contributions to the open-source community.
+                </li>
+                <li>
+                  <Link href="/reading-list" className="text-blue-400 hover:text-blue-300">
+                    Reading List
+                  </Link>
+                  : A collection of articles and books I've been reading.
+                </li>
+                <li>
                 <Link href="/projects" className="text-blue-400 hover:text-blue-300">
                   Projects
-                </Link>{" "}
-                and{" "}
-                <Link href="/reading-list" className="text-blue-400 hover:text-blue-300">
-                  Reading List
-                </Link>{" "}
-                pages to get a deeper insight into my work and interests.
-              </p>
+                  </Link>
+                  : An overview of my personal projects.
+                </li>
+              </ul>
             </div>
             <div className="flex gap-3 mt-8">
               <Button className="h-9 px-5 bg-[#4B67F5] hover:bg-[#4B67F5]/90 rounded-md">View Projects</Button>
