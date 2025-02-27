@@ -13,6 +13,7 @@ interface ReadingItem {
   tags: string[]
   type: "article" | "book"
   company?: string
+  currentlyReading?: boolean
 }
 
 const readingItems: ReadingItem[] = [
@@ -21,8 +22,9 @@ const readingItems: ReadingItem[] = [
     title: "Malware Data Science: Attack Detection and Attribution",
     url: "https://nostarch.com/malwaredatascience",
     authors: ["Joshua Saxe", "Hillary Sanders"],
-    tags: ["Distributed Systems", "System Design", "Kubernetes", "Containers", "Architecture"],
+    tags: ["Malware Analysis", "Detection", "Data Science", "Machine Learning"],
     type: "book",
+    currentlyReading: true,
   },
   {
     id: "formal-ssh-aws-ssm",
@@ -375,6 +377,14 @@ export default function ReadingListPage() {
     )
   }, [selectedTags, selectedType])
 
+  const sortedFilteredItems = useMemo(() => {
+    return [...filteredItems].sort((a, b) => {
+      if (a.currentlyReading && !b.currentlyReading) return -1
+      if (!a.currentlyReading && b.currentlyReading) return 1
+      return 0
+    })
+  }, [filteredItems])
+  
   const filteredItemsByType = useMemo(() => {
     return readingItems.filter((item) => selectedType === "all" || item.type === selectedType)
   }, [selectedType])
@@ -518,7 +528,7 @@ export default function ReadingListPage() {
         </div>
 
         <div className="space-y-6">
-          {filteredItems.map((item) => (
+        {sortedFilteredItems.map((item) => (
             <article key={item.id} className="border border-zinc-800 force-rounded p-6 space-y-4">
               <div className="flex justify-between items-start mb-4">
                 <h2 className="text-xl font-semibold">
@@ -532,18 +542,25 @@ export default function ReadingListPage() {
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </a>
                 </h2>
-                <span
-                  className={`
-                    px-3 py-1 rounded-full text-xs font-medium
-                    ${
-                      item.type === "article"
-                        ? "bg-blue-500/10 text-blue-500 border border-blue-500/20"
-                        : "bg-purple-500/10 text-purple-500 border border-purple-500/20"
-                    }
-                  `}
-                >
-                  {item.type === "article" ? "Article" : "Book"}
-                </span>
+                <div className="flex items-center space-x-2">
+                  {item.currentlyReading && (
+                    <span className="px-2 py-1 bg-green-500/10 text-green-500 text-xs font-medium rounded-full border border-green-500/20">
+                      Currently Reading
+                    </span>
+                  )}
+                  <span
+                    className={`
+                      px-3 py-1 rounded-full text-xs font-medium
+                      ${
+                        item.type === "article"
+                          ? "bg-blue-500/10 text-blue-500 border border-blue-500/20"
+                          : "bg-purple-500/10 text-purple-500 border border-purple-500/20"
+                      }
+                    `}
+                  >
+                    {item.type === "article" ? "Article" : "Book"}
+                  </span>
+                </div>
               </div>
               <div className="flex items-center text-sm text-zinc-500">
                 <User className="w-4 h-4 mr-2" />
