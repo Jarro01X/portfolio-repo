@@ -545,7 +545,7 @@ export default function ReadingListPage() {
                 <div className="flex items-center space-x-2">
                   {item.currentlyReading && (
                     <span className="px-2 py-1 bg-green-500/10 text-green-500 text-xs font-medium rounded-full border border-green-500/20">
-                      Currently Reading
+                      Reading
                     </span>
                   )}
                   <span
