@@ -7,6 +7,10 @@ interface Contribution {
   contributions: string[]
   technologies: string[]
   link: string
+  additionalLink?: {
+    text: string
+    url: string
+  }
 }
 
 const contributions: Contribution[] = [
@@ -16,13 +20,24 @@ const contributions: Contribution[] = [
     contributions: ["Translated README to Portuguese (Brazil)", "Improved documentation for international users"],
     technologies: ["Go", "YAML", "Security"],
     link: "https://github.com/projectdiscovery/nuclei",
+    additionalLink: {
+      text: "View Portuguese README",
+      url: "https://github.com/projectdiscovery/nuclei/blob/dev/README_PT-BR.md",
+    },
   },
   {
     project: "PyRIT",
-    description: "Python Risk Identification Tool for generative AI (PyRIT) is an open source framework built to empower security professionals and engineers to proactively identify risks in generative AI systems.",
-    contributions: ["Added a new adversarial dataset that PyRIT is now able to pull prompts from"],
-    technologies: ["Python", "AI", "Security"],
+    description: "Microsoft's Python Risk Identification Tool for generative AI security.",
+    contributions: [
+      "Implemented feature to add Babelscape/ALERT Dataset",
+      "Collaborated on issue #449 and submitted pull request #738",
+    ],
+    technologies: ["Python", "AI", "Security", "Data Processing"],
     link: "https://github.com/Azure/PyRIT",
+    additionalLink: {
+      text: "View Issue #449",
+      url: "https://github.com/Azure/PyRIT/issues/449",
+    },
   },
 ]
 
@@ -70,33 +85,18 @@ export function OpenSourceContributions() {
                   ))}
                 </div>
               </div>
-              {contribution.project === "Nuclei" && (
+              {contribution.additionalLink && (
                 <Button
                   variant="outline"
                   size="sm"
-                  className="mt-4 force-rounded"
-                  onClick={() =>
-                    window.open("https://github.com/projectdiscovery/nuclei/blob/dev/README_PT-BR.md", "_blank")
-                  }
+                  className="mt-4"
+                  onClick={() => window.open(contribution.additionalLink!.url, "_blank")}
                 >
-                  View Portuguese README
+                  {contribution.additionalLink.text}
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
               )}
             </div>
-            </div>
-            {contribution.project === "PyRIT" && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-4 force-rounded"
-                onClick={() =>
-                  window.open("https://github.com/Azure/PyRIT/issues/449#issuecomment-2683847578", "_blank")
-                }
-              >
-                View Issue
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
             )}
           </div>
           ))}
