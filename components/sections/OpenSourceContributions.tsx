@@ -17,6 +17,13 @@ const contributions: Contribution[] = [
     technologies: ["Go", "YAML", "Security"],
     link: "https://github.com/projectdiscovery/nuclei",
   },
+  {
+    project: "PyRIT",
+    description: "Python Risk Identification Tool for generative AI (PyRIT) is an open source framework built to empower security professionals and engineers to proactively identify risks in generative AI systems.",
+    contributions: ["Added a new adversarial dataset that PyRIT is now able to pull prompts from"],
+    technologies: ["Python", "AI", "Security"],
+    link: "https://github.com/Azure/PyRIT",
+  },
 ]
 
 export function OpenSourceContributions() {
@@ -77,6 +84,21 @@ export function OpenSourceContributions() {
                 </Button>
               )}
             </div>
+            </div>
+            {contribution.project === "PyRIT" && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-4 force-rounded"
+                onClick={() =>
+                  window.open("https://github.com/Azure/PyRIT/issues/449#issuecomment-2683847578", "_blank")
+                }
+              >
+                View Issue
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            )}
+          </div>
           ))}
         </div>
       </div>
