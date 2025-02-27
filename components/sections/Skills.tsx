@@ -186,6 +186,7 @@ export function Skills() {
         <div className="flex justify-center gap-3 mb-12">
           {currentSkills.categories.map((category, index) => (
             <div key={`category-${index}`} className="flex justify-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={`${skill.name}-${skillIndex}`}
