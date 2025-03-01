@@ -76,7 +76,6 @@ export default function Home() {
         </div>
       </section>
       <WorkExperience />
-      <OpenSourceContributions />
       <section id="skills" ref={skillsRef}>
         <Skills />
       </section>
