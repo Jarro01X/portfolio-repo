@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
-import { X, Tag, ChevronDown, ChevronUp } from "lucide-react"
+import { X, Tag, ChevronDown, ChevronUp, ExternalLink, Code  } from "lucide-react"
 
 type ProjectCategory = "All" | "Development" | "Security"
 
@@ -365,6 +365,32 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
+              {(project.documentationUrl || project.sourceCodeUrl) && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.documentationUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-blue-400 border-blue-400 force-rounded"
+                      onClick={() => window.open(project.documentationUrl, "_blank")}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Documentation
+                    </Button>
+                  )}
+                  {project.sourceCodeUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-green-400 border-green-400 force-rounded"
+                      onClick={() => window.open(project.sourceCodeUrl, "_blank")}
+                    >
+                      <Code className="w-4 h-4 mr-2" />
+                      Source Code
+                    </Button>
+                  )}
+                </div>
+              )}
               {project.extendedDescription && (
                 <div>
                   <Button
