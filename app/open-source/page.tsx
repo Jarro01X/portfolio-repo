@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Tag, X, Code, GitFork } from "lucide-react"
+import { ExternalLink, Tag, X, Code, GitFork, Hammer } from "lucide-react"     
 import { OpenSourceContributions } from "@/components/sections/OpenSourceContributions"
 
 interface OpenSourceProject {
@@ -10,6 +10,15 @@ interface OpenSourceProject {
   description: string
   link: string
   tags: string[]
+}
+
+interface PersonalRepo {
+  name: string
+  description: string
+  tags: string[]
+  documentationUrl?: string
+  sourceCodeUrl?: string
+  isWIP?: boolean
 }
 
 const projects: OpenSourceProject[] = [
@@ -108,10 +117,22 @@ const projects: OpenSourceProject[] = [
   },
 ]
 
+const personalRepos: PersonalRepo[] = [
+  {
+    name: "Heph4estus",
+    description:
+      "An open source CLI-tool that automates useful infrastructure for penetration testers, bug bounty hunters, and engineers involved in red team operations. By using Terraform the tool is able to automatically instantiate infrastructure with any cloud provider.",
+    tags: ["Go", "Terraform", "Security", "Cloud", "DevOps", "Red Team"],
+    documentationUrl: "https://www.hephaestus.tools",
+    sourceCodeUrl: "https://github.com/Jarro01X/heph4estus",
+    isWIP: true,
+  },
+]
+
 export default function OpenSourcePage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [showTagFilter, setShowTagFilter] = useState(false)
-  const [activeView, setActiveView] = useState<"projects" | "contributions">("projects")
+  const [activeView, setActiveView] = useState<"projects" | "myrepos" | "contributions">("projects")
 
   const allTags = useMemo(() => {
     const tags = new Set<string>()
@@ -153,6 +174,16 @@ export default function OpenSourcePage() {
               Projects I Support
             </button>
             <button
+              onClick={() => setActiveView("myrepos")}
+              className={`
+                px-4 py-2 text-sm rounded-md transition-colors flex items-center
+                ${activeView === "myrepos" ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white"}
+              `}
+            >
+              <Hammer className="w-4 h-4 mr-2" />
+              My Repos
+            </button>
+            <button
               onClick={() => setActiveView("contributions")}
               className={`
         px-4 py-2 text-sm force-rounded transition-colors flex items-center
@@ -160,7 +191,7 @@ export default function OpenSourcePage() {
       `}
             >
               <Code className="w-4 h-4 mr-2" />
-              My Contributions
+              Contributions
             </button>
           </div>
         </div>
@@ -253,6 +284,58 @@ export default function OpenSourcePage() {
           ))}
         </div>
       </>
+        ) : activeView === "myproject" ? (
+          <div className="py-8">
+            <h2 className="text-2xl font-semibold mb-4 text-center">My Projects</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-center">
+              This section showcases my personal open source projects that I'm actively developing.
+            </p>
+
+            <div className="grid gap-6 max-w-4xl mx-auto">
+              {personalProjects.map((project) => (
+                <div key={project.name} className="border border-zinc-800 rounded-lg p-6 relative">
+                  {project.isWIP && (
+                    <span className="absolute top-2 right-2 bg-zinc-800 text-blue-400 text-xs font-medium px-2 py-1 rounded-full border border-blue-500">
+                      WIP
+                    </span>
+                  )}
+                  <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+                  <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, index) => (
+                      <span key={index} className="px-3 py-1 rounded-full text-xs bg-zinc-900 text-zinc-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    {project.documentationUrl && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-blue-400 border-blue-400"
+                        onClick={() => window.open(project.documentationUrl, "_blank")}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Documentation
+                      </Button>
+                    )}
+                    {project.sourceCodeUrl && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-green-400 border-green-400"
+                        onClick={() => window.open(project.sourceCodeUrl, "_blank")}
+                      >
+                        <Code className="w-4 h-4 mr-2" />
+                        Source Code
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         ) : (
           <OpenSourceContributions />
         )}
