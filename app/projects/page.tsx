@@ -14,6 +14,8 @@ interface Project {
   technologies: string[]
   isWIP?: boolean
   extendedDescription?: string
+  documentationUrl?: string
+  sourceCodeUrl?: string
 }
 
 const projects: Project[] = [
@@ -43,6 +45,8 @@ const projects: Project[] = [
     categories: ["Development", "Security"],
     technologies: ["Go", "Terraform", "Bash", "AWS", "GCP", "DigitalOcean", "Azure"],
     isWIP: true,
+    documentationUrl: "https://www.hephaestus.tools",
+    sourceCodeUrl: "https://github.com/Jarro01X/heph4estus",
   },
   {
     title: "Th0th",
