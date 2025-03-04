@@ -122,7 +122,7 @@ const personalRepos: PersonalRepo[] = [
     name: "Heph4estus",
     description:
       "An open source CLI-tool that automates useful infrastructure for penetration testers, bug bounty hunters, and engineers involved in red team operations. By using Terraform the tool is able to automatically instantiate infrastructure with any cloud provider.",
-    tags: ["Go", "Terraform", "Security", "Cloud", "DevOps", "Red Team"],
+    tags: ["Go", "Terraform", "Bash", "AWS", "GCP", "Azure", "Red Team"],
     documentationUrl: "https://www.hephaestus.tools",
     sourceCodeUrl: "https://github.com/Jarro01X/heph4estus",
     isWIP: true,
@@ -288,7 +288,7 @@ export default function OpenSourcePage() {
           <div className="py-8">
             <div className="grid gap-6 max-w-4xl mx-auto">
               {personalRepos.map((project) => (
-                <div key={project.name} className="border border-zinc-800 rounded-lg p-6 relative">
+                <div key={project.name} className="border border-zinc-800 force-rounded p-6 relative">
                   {project.isWIP && (
                     <span className="absolute top-2 right-2 bg-zinc-800 text-blue-400 text-xs font-medium px-2 py-1 rounded-full border border-blue-500">
                       WIP
