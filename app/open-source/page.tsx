@@ -284,15 +284,10 @@ export default function OpenSourcePage() {
           ))}
         </div>
       </>
-        ) : activeView === "myproject" ? (
+        ) : activeView === "myrepos" ? (
           <div className="py-8">
-            <h2 className="text-2xl font-semibold mb-4 text-center">My Projects</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-center">
-              This section showcases my personal open source projects that I'm actively developing.
-            </p>
-
             <div className="grid gap-6 max-w-4xl mx-auto">
-              {personalProjects.map((project) => (
+              {personalRepos.map((project) => (
                 <div key={project.name} className="border border-zinc-800 rounded-lg p-6 relative">
                   {project.isWIP && (
                     <span className="absolute top-2 right-2 bg-zinc-800 text-blue-400 text-xs font-medium px-2 py-1 rounded-full border border-blue-500">
