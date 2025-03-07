@@ -127,6 +127,13 @@ const personalRepos: PersonalRepo[] = [
     sourceCodeUrl: "https://github.com/Jarro01X/heph4estus",
     isWIP: true,
   },
+  {
+    name: "Portfolio Website",
+    description:
+      "This website :D",
+    tags: ["Web Development", "React", "Next.js", "Front-End"],
+    sourceCodeUrl: "https://github.com/Jarro01X/portfolio-repo",
+  },
 ]
 
 export default function OpenSourcePage() {
