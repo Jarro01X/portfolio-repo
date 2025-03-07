@@ -44,9 +44,9 @@ const projects: OpenSourceProject[] = [
   },
   {
     name: "Onyx",
-    description: "Onyx is a powerful web3 wallet built for DeFi traders",
+    description: "Gen-AI Chat for Teams - Think ChatGPT if it had access to your team's unique knowledge.",
     link: "https://github.com/onyx-dot-app/onyx",
-    tags: ["Web3", "DeFi", "Blockchain", "TypeScript"],
+    tags: ["AI", "Chat", "TypeScript", "Knowledge Base"],
   },
   {
     name: "Infisical",
