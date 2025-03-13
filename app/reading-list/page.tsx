@@ -18,6 +18,15 @@ interface ReadingItem {
 
 const readingItems: ReadingItem[] = [
   {
+    id: "microsoft-jailbreak-cca",
+    title: "Jailbreaking is Mostly Simpler Than You Think",
+    url: "https://msrc.microsoft.com/blog/2025/03/jailbreaking-is-mostly-simpler-than-you-think/",
+    authors: ["Microsoft Security Research Center", "Mark Russinovich"],
+    tags: ["Threat Research", "LLM", "Jailbreak", "Generative AI", "Security"],
+    type: "article",
+    company: "Microsoft",
+  },
+  {
     id: "unit42-pan-llm-jailbreak",
     title: "Investigating LLM Jailbreaking of Popular Generative AI Web Products",
     url: "https://unit42.paloaltonetworks.com/jailbreaking-generative-ai-web-products/",
