@@ -121,7 +121,7 @@ const personalRepos: PersonalRepo[] = [
   {
     name: "Heph4estus",
     description:
-      "An open source CLI-tool that automates useful infrastructure for penetration testers, bug bounty hunters, and engineers involved in red team operations. By using Terraform the tool is able to automatically instantiate infrastructure with any cloud provider.",
+      "An open source TUI-tool that automates useful infrastructure for penetration testers, bug bounty hunters, and engineers involved in red team operations. By using Terraform the tool is able to automatically instantiate infrastructure with any cloud provider.",
     tags: ["Go", "Terraform", "Bash", "AWS", "GCP", "Azure", "Red Team"],
     documentationUrl: "https://www.hephaestus.tools",
     sourceCodeUrl: "https://github.com/Jarro01X/heph4estus",
